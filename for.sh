@@ -1,26 +1,15 @@
-# AULA DE for in
-array=()
-k=0
-z=0
-while [ $k -eq $z ] #ENQUANTO K=0 FAZER
-do
+echo "digite um numero para ver os pares e impares até ele "
+read num
 
-	echo "DESEJA CONTINUAR?S/n"
-	read res
-	if [ $res = "n" ]
+for ((i=1;i<=$num;i++))
+do
+	par=$[$i % 2]
+
+	if [ $par -eq 1 ]
 	then
-		k=1
+		echo "$i é impar"
 	else
-		for j in ${#array[@]} # ESSA PROPRIEDADE RETORNA O NUMERO DE ELEMENTOS DO ARRAY
-		do
-			echo "digite um nome: "
-			read nome
-			array[$j]=$nome
-		done
+		echo "$i é par"
 	fi
 done
 
-for i in ${array[*]}
-do
-echo "eu amo $i"
-done
